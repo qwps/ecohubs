@@ -2,6 +2,15 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Gamepad2, Sword, Car, Brain, Users, Zap } from "lucide-react";
+import cyberWarriorsImg from "@/assets/games/cyber-warriors.jpg";
+import epicQuestImg from "@/assets/games/epic-quest.jpg";
+import speedRacersImg from "@/assets/games/speed-racers.jpg";
+import mindPalaceImg from "@/assets/games/mind-palace.jpg";
+import battleRoyaleImg from "@/assets/games/battle-royale.jpg";
+import mysteryManorImg from "@/assets/games/mystery-manor.jpg";
+import driftKingsImg from "@/assets/games/drift-kings.jpg";
+import logicLabsImg from "@/assets/games/logic-labs.jpg";
+import teamTacticsImg from "@/assets/games/team-tactics.jpg";
 
 interface Game {
   id: number;
@@ -9,18 +18,19 @@ interface Game {
   category: string;
   description: string;
   players: string;
+  image: string;
 }
 
 const games: Game[] = [
-  { id: 1, title: "Cyber Warriors", category: "Action", description: "Fast-paced combat in a neon future", players: "1-4" },
-  { id: 2, title: "Epic Quest", category: "Adventure", description: "Embark on a legendary journey", players: "1" },
-  { id: 3, title: "Speed Racers", category: "Racing", description: "High-octane racing action", players: "1-8" },
-  { id: 4, title: "Mind Palace", category: "Puzzle", description: "Challenge your cognitive skills", players: "1" },
-  { id: 5, title: "Battle Royale", category: "Action", description: "Last one standing wins", players: "1-100" },
-  { id: 6, title: "Mystery Manor", category: "Adventure", description: "Solve the haunting mystery", players: "1-2" },
-  { id: 7, title: "Drift Kings", category: "Racing", description: "Master the art of drifting", players: "1-4" },
-  { id: 8, title: "Logic Labs", category: "Puzzle", description: "Scientific puzzles await", players: "1" },
-  { id: 9, title: "Team Tactics", category: "Strategy", description: "Lead your squad to victory", players: "1-6" },
+  { id: 1, title: "Cyber Warriors", category: "Action", description: "Fast-paced combat in a neon future", players: "1-4", image: cyberWarriorsImg },
+  { id: 2, title: "Epic Quest", category: "Adventure", description: "Embark on a legendary journey", players: "1", image: epicQuestImg },
+  { id: 3, title: "Speed Racers", category: "Racing", description: "High-octane racing action", players: "1-8", image: speedRacersImg },
+  { id: 4, title: "Mind Palace", category: "Puzzle", description: "Challenge your cognitive skills", players: "1", image: mindPalaceImg },
+  { id: 5, title: "Battle Royale", category: "Action", description: "Last one standing wins", players: "1-100", image: battleRoyaleImg },
+  { id: 6, title: "Mystery Manor", category: "Adventure", description: "Solve the haunting mystery", players: "1-2", image: mysteryManorImg },
+  { id: 7, title: "Drift Kings", category: "Racing", description: "Master the art of drifting", players: "1-4", image: driftKingsImg },
+  { id: 8, title: "Logic Labs", category: "Puzzle", description: "Scientific puzzles await", players: "1", image: logicLabsImg },
+  { id: 9, title: "Team Tactics", category: "Strategy", description: "Lead your squad to victory", players: "1-6", image: teamTacticsImg },
 ];
 
 const categories = [
@@ -96,6 +106,14 @@ const Games = () => {
                       key={game.id}
                       className="bg-card border-border hover:border-primary transition-all duration-300 hover:shadow-[0_0_30px_rgba(74,222,128,0.2)] group overflow-hidden"
                     >
+                      <div className="relative aspect-video overflow-hidden">
+                        <img
+                          src={game.image}
+                          alt={game.title}
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60" />
+                      </div>
                       <div className="p-6">
                         <div className="flex items-start justify-between mb-4">
                           <div className="flex-1">
