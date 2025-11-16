@@ -130,12 +130,14 @@ const Games = () => {
                             <Users className="w-4 h-4" />
                             <span>{game.players} Players</span>
                           </div>
-                          <Button
-                            size="sm"
-                            className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
-                          >
-                            Play Now
-                          </Button>
+                          <Link to={`/play/${game.id}`}>
+                            <Button
+                              size="sm"
+                              className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+                            >
+                              Play Now
+                            </Button>
+                          </Link>
                         </div>
                       </div>
                     </Card>
